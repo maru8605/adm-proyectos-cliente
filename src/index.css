@@ -1,10 +1,10 @@
 :root {
   --blanco: #ffffff;
   --gris1: #edf2f6;
-  --gris2: #2f3848;
-  --gris3: #1a202d;
+  --dorado2: #f8914d;
+  --dorado3: #f86d11;
   --negro: #000000;
-  --headingFont: "Roboto Slab", serif;
+  --headingFont: "Marck Script", cursive;
   --textFont: "Roboto", sans-serif;
 }
 *,
@@ -20,6 +20,8 @@ html {
 body {
   min-height: 100%;
   background-color: var(--gris1);
+  background-image: url("https://images.unsplash.com/photo-1512950050685-b1d4ae63d2df?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80");
+  background-size: cover;
   font-size: 16px;
   font-size: 1.6rem;
   font-family: var(--textFont);
@@ -37,7 +39,7 @@ h1 span {
   font-weight: 400;
 }
 h1 {
-  font-size: 3rem;
+  font-size: 3.6rem;
 }
 h2 {
   font-size: 2.4rem;
@@ -57,7 +59,7 @@ a {
   margin-top: 2rem;
   font-family: var(--headingFont);
   padding: 1.5rem;
-  font-size: 1.4;
+  font-size: 2.5rem;
   font-weight: 400;
   border-radius: 0.5rem;
   border: none;
@@ -67,11 +69,11 @@ a {
   cursor: pointer;
 }
 .btn-primario {
-  background-color: var(--gris2);
+  background-color: var(--dorado2);
   color: var(--blanco);
 }
 .btn-primario:hover {
-  background: var(--gris3);
+  background: var(--dorado3);
 }
 .btn-secundario {
   background-color: var(--gris1);
@@ -281,6 +283,9 @@ aside {
 
 .form-usuario {
   background-color: var(--gris2);
+  background-image: url("https://images.unsplash.com/photo-1512950050685-b1d4ae63d2df?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80");
+  background-size: cover;
+
   height: 100vh;
   min-height: 800px;
   display: flex;
@@ -320,34 +325,4 @@ aside {
   margin-top: 2rem;
   display: block;
   opacity: 0.7;
-}
-.alerta {
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 1rem 3rem;
-  border-radius: 1rem;
-  font-family: var(--headingFont);
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 2.2rem;
-  text-align: center;
-  width: 100%;
-}
-@media (min-width: 768px) {
-  .alerta {
-    width: auto;
-    top: 30px;
-    right: 10px;
-    left: auto;
-  }
-}
-
-.alerta-ok {
-  background-color: rgb(109, 211, 109);
-  color: rgb(2, 103, 2);
-}
-.alerta-error {
-  background-color: rgb(230, 78, 78);
-  color: var(--blanco);
 }
