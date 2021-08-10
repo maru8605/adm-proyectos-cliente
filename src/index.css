@@ -2,10 +2,13 @@
   --blanco: #ffffff;
   --gris1: #edf2f6;
   --gris2: #2f3848;
-  --dorado2: #f8914d;
-  --dorado3: #f86d11;
+  --gris3: #1a202d;
+  --violeta: #8f01b9;
+  --violeta2: #52006a;
+  /* --dorado2: #52006a;
+  --dorado3: #f86d11; */
   --negro: #000000;
-  --headingFont: "Marck Script", cursive;
+  --headingFont: "Roboto Slab", serif;
   --textFont: "Roboto", sans-serif;
 }
 *,
@@ -69,11 +72,11 @@ a {
   cursor: pointer;
 }
 .btn-primario {
-  background-color: var(--dorado2);
+  background-color: var(--violeta);
   color: var(--blanco);
 }
 .btn-primario:hover {
-  background: var(--dorado3);
+  background: var(--violeta2);
 }
 .btn-secundario {
   background-color: var(--gris1);
@@ -138,7 +141,7 @@ aside {
 .app-header {
   display: flex;
   justify-content: space-between;
-  background-color: var(--gris2);
+  background-color: var(--violeta);
   padding: 4rem;
 }
 .nombre-usuario {
@@ -212,6 +215,7 @@ aside {
 }
 .tarea .acciones .btn:first-of-type {
   margin-right: 1rem;
+  margin-left: 1rem;
 }
 .tarea p {
   font-size: 1.6rem;
@@ -250,10 +254,16 @@ aside {
 .correcto {
   background-color: rgba(154, 252, 154, 0.3);
   color: var(--gris3);
+  border: none;
+  padding: 5px;
+  cursor: pointer;
 }
 .incompleto {
   background-color: rgba(255, 178, 178, 0.4);
   color: var(--gris3);
+  border: none;
+  padding: 5px;
+  cursor: pointer;
 }
 .error {
   max-width: 600px;
@@ -283,7 +293,7 @@ aside {
 
 .form-usuario {
   background-color: var(--gris2);
-  background-image: url("https://images.unsplash.com/photo-1512950050685-b1d4ae63d2df?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80");
+  background-image: url("https://cdn.pixabay.com/photo/2020/11/14/18/47/lilac-5742593__340.jpg");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -329,6 +339,6 @@ aside {
   color: var(--gris2);
 }
 .enlace-cuenta:hover {
-  color: #ff6500;
+  color: rgb(0, 0, 255);
   cursor: pointer;
 }
