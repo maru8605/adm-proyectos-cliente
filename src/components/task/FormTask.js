@@ -1,11 +1,22 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
+import ProjectContext from '../../context/ProjectContext';
 
 const FormTask = () => {
-
     const [task, newTask] = useState({
         nombre:'' 
     })
     const {nombre} = task
+
+    const projectsContext = useContext(ProjectContext);
+    const {proyecto} = projectsContext; 
+
+    // Si no hay proyecto seleccionado 
+    if(!proyecto) return null
+    // Array destructuring para otener el proyecto
+    const [currentProject] = proyecto
+
+
+    
 
     const onChangeTask = e => {
         newTask({

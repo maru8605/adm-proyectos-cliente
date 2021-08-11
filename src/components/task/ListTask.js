@@ -7,6 +7,13 @@ const ListTask = () => {
     const projectsContext = useContext(ProjectContext);
     const {proyecto} = projectsContext; 
 
+
+    // Si no hay proyecto seleccionado 
+    if(!proyecto) return <h2>Selecciona un proyecto. </h2>
+    // Array destructuring para otener el proyecto
+    const [currentProject] = proyecto
+    
+
     const listadoTareas = [
         {nombre: 'elegir plataforma', estado: true},
         {nombre: 'elegir colores', estado: false},
@@ -15,7 +22,7 @@ const ListTask = () => {
     ]
     return (
         <>
-            <h2>Lista de Tareas</h2>
+            <h2>Proyecto: {proyecto.nombre}</h2>
 
             <ul className='listado-tareas'>
                 {listadoTareas.length === 0
