@@ -22,11 +22,11 @@ const Task = ({tarea}) => {
             <div className='acciones'>
                 <button
                     type='button'
-                    className='btn btn-primario'
+                    className='btn btn-edit'
                 >Editar</button>
                 <button
                     type='button'
-                    className='btn btn-secundario'
+                    className='btn incompleto'
                 >Eliminar</button>
             </div>
              

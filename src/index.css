@@ -5,6 +5,8 @@
   --gris3: #1a202d;
   --violeta: #8f01b9;
   --violeta2: #52006a;
+  --violeta3: #d0dee8;
+  --celeste: #ba26e222;
   /* --dorado2: #52006a;
   --dorado3: #f86d11; */
   --negro: #000000;
@@ -81,12 +83,16 @@ a {
 .btn-secundario {
   background-color: var(--gris1);
 }
+.btn-edit {
+  background-color: var(--celeste);
+  color: var(--gris3);
+}
 .btn-block {
   display: block;
   width: 100%;
 }
 .btn-submit:hover {
-  background-color: var(--gris2);
+  background-color: var(--violeta2);
 }
 .btn-blank {
   margin: 0;
@@ -162,7 +168,7 @@ aside {
 
 /** Formulario crear y editar tareas **/
 .formulario {
-  background-color: var(--gris3);
+  background-color: var(--violeta3);
   padding: 4rem;
 }
 .formulario form {
@@ -255,15 +261,17 @@ aside {
   background-color: rgba(154, 252, 154, 0.3);
   color: var(--gris3);
   border: none;
-  padding: 5px;
+  padding: 7px;
   cursor: pointer;
+  width: 93px;
 }
 .incompleto {
   background-color: rgba(255, 178, 178, 0.4);
   color: var(--gris3);
   border: none;
-  padding: 5px;
+  padding: 7px;
   cursor: pointer;
+  width: 93px;
 }
 .error {
   max-width: 600px;
