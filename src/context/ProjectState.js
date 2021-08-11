@@ -3,7 +3,12 @@ import ProjectContext from './ProjectContext'
 import { useReducer } from 'react'
 
 
-import {FORM_PROJECT, GET_PROJECTS, ADD_PROJECT, SHOW_ERR_FORM} from '../types'
+import {
+    FORM_PROJECT,
+    GET_PROJECTS,
+    ADD_PROJECT,
+    SHOW_ERR_FORM,
+    CURRENT_PROJECT} from '../types'
 
 const ProjectState = props => {
 
@@ -18,7 +23,8 @@ const ProjectState = props => {
         
         proyectos : [],
         formulario : false ,
-        errorform: false
+        errorform: false,
+        proyecto: null
     }
 
     // Dispatch para ejecutar las acciones 
@@ -54,16 +60,26 @@ const ProjectState = props => {
 
         })
     }
+
+    // MOSTRAR PROYECTO ACTUAL
+    const currentProject = proyectoId => {
+        dispatch({
+            type: CURRENT_PROJECT,
+            payload: proyectoId
+        })
+    }
     return(
         <ProjectContext.Provider
             value={{
                 proyectos : state.proyectos,
                 formulario: state.formulario,
                 errorform : state.errorform,
+                proyecto : state.proyecto,
                 showForm,
                 getProjects,
                 addProyect,
-                showError
+                showError,
+                currentProject 
             }}
         >
             {props.children}

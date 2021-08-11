@@ -1,7 +1,11 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import ProjectContext from '../../context/ProjectContext';
+
 import Task from './Task'
 
 const ListTask = () => {
+    const projectsContext = useContext(ProjectContext);
+    const {proyecto} = projectsContext; 
 
     const listadoTareas = [
         {nombre: 'elegir plataforma', estado: true},
