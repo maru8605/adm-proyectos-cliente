@@ -276,7 +276,7 @@ aside {
 .error {
   max-width: 600px;
   margin: 2rem auto 0 auto;
-  background-color: rgb(170, 0, 0);
+  background-color: rgb(251 98 98);
   color: var(--blanco);
 }
 

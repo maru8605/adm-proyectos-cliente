@@ -1,8 +1,9 @@
-
 import ProjectReducer from './ProjectReducer'
 import ProjectContext from './ProjectContext'
 import { useReducer } from 'react'
-import {FORM_PROJECT, GET_PROJECTS} from '../types'
+
+
+import {FORM_PROJECT, GET_PROJECTS, ADD_PROJECT, SHOW_ERR_FORM} from '../types'
 
 const ProjectState = props => {
 
@@ -16,7 +17,8 @@ const ProjectState = props => {
     const initialState = {
         
         proyectos : [],
-        formulario : false 
+        formulario : false ,
+        errorform: false
     }
 
     // Dispatch para ejecutar las acciones 
@@ -36,14 +38,32 @@ const ProjectState = props => {
         })
     }
 
+// agregar proyectos
+    const addProyect = proyecto => {
+        proyecto.id = Math.floor(Math.random() * 10000) + 1;
+        // agregar projecto al state
+        dispatch({
+            type: ADD_PROJECT,
+            payload : proyecto
+        })
+    }
+// MOSTAR ERROR CUANDO EL FORM ESTA VACIO 
+    const showError = () =>{
+        dispatch({
+            type: SHOW_ERR_FORM
 
+        })
+    }
     return(
         <ProjectContext.Provider
             value={{
                 proyectos : state.proyectos,
                 formulario: state.formulario,
+                errorform : state.errorform,
                 showForm,
-                getProjects
+                getProjects,
+                addProyect,
+                showError
             }}
         >
             {props.children}
