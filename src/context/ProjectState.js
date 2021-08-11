@@ -2,6 +2,7 @@
 import ProjectReducer from './ProjectReducer'
 import ProjectContext from './ProjectContext'
 import { useReducer } from 'react'
+import {FORM_PROJECT} from '../types'
 
 const ProjectState = props => {
     const initialState = {
@@ -12,10 +13,18 @@ const ProjectState = props => {
     const [state, dispatch] = useReducer(ProjectReducer, initialState)
 
     // funciones para el crud
+    const showForm =()=>{
+        dispatch({
+            type: FORM_PROJECT
+        })
+    }
+
+
     return(
         <ProjectContext.Provider
             value={{
-                formulario: state.formulario
+                formulario: state.formulario,
+                showForm
             }}
         >
             {props.children}
