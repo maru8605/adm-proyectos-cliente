@@ -70,6 +70,13 @@ a {
   border: none;
   transition: background-color 0.3s ease;
 }
+.btn-small {
+  font-family: var(--headingFont);
+  border-radius: 0.5rem;
+  border: none;
+  transition: background-color 0.3s ease;
+  padding: 0.7rem;
+}
 .btn:hover {
   cursor: pointer;
 }

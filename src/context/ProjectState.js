@@ -1,4 +1,5 @@
 import ProjectReducer from './ProjectReducer'
+import { v4 as uuidv4 } from 'uuid'
 import ProjectContext from './ProjectContext'
 import { useReducer } from 'react'
 
@@ -8,7 +9,8 @@ import {
     GET_PROJECTS,
     ADD_PROJECT,
     SHOW_ERR_FORM,
-    CURRENT_PROJECT} from '../types'
+    CURRENT_PROJECT,
+    DELETE_PROJECT} from '../types'
 
 const ProjectState = props => {
 
@@ -46,8 +48,9 @@ const ProjectState = props => {
 
 // agregar proyectos
     const addProyect = proyecto => {
-        proyecto.id = Math.floor(Math.random() * 10000) + 1;
-        // agregar projecto al state
+        proyecto.id = uuidv4()
+        //Math.floor(Math.random() * 10000) + 1;
+        // agregar proyecto al state
         dispatch({
             type: ADD_PROJECT,
             payload : proyecto
@@ -68,6 +71,15 @@ const ProjectState = props => {
             payload: proyectoId
         })
     }
+
+    //ELIMINAR PROYECTO
+    const deleteProject = proyectoId =>{
+        dispatch({
+            type: DELETE_PROJECT,
+            payload : proyectoId
+        })
+    }
+
     return(
         <ProjectContext.Provider
             value={{
@@ -79,7 +91,8 @@ const ProjectState = props => {
                 getProjects,
                 addProyect,
                 showError,
-                currentProject 
+                currentProject,
+                deleteProject
             }}
         >
             {props.children}

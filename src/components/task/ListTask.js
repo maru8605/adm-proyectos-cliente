@@ -5,11 +5,11 @@ import Task from './Task'
 
 const ListTask = () => {
     const projectsContext = useContext(ProjectContext);
-    const {proyecto} = projectsContext; 
+    const { proyecto, deleteProject } = projectsContext; 
 
 
     // Si no hay proyecto seleccionado 
-    if(!proyecto) return <h2>Selecciona un proyecto. </h2>
+    if(!proyecto) return <h2> Selecciona un proyecto. </h2>
     // Array destructuring para otener el proyecto
     const [currentProject] = proyecto
     
@@ -20,9 +20,14 @@ const ListTask = () => {
         {nombre: 'maquetado', estado: false},
         {nombre: 'elegir pago', estado: true},
     ]
+
+    const onClickDelete = () =>{
+        deleteProject(currentProject.id)
+    }
+
     return (
         <>
-            <h2>Proyecto: {proyecto.nombre}</h2>
+            <h2> Proyecto: {currentProject.nombre}</h2>
 
             <ul className='listado-tareas'>
                 {listadoTareas.length === 0
@@ -33,7 +38,8 @@ const ListTask = () => {
             </ul> 
             <button
                 type='button'
-                className='btn btn-eliminar'
+                className='btn-small btn-edit'
+                onClick={onClickDelete}
             >Eliminar Proyecto &times;</button>
         </>
     )
