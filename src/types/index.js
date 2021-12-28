@@ -4,3 +4,5 @@ export const ADD_PROJECT = 'ADD_PROJECT'
 export const SHOW_ERR_FORM = 'SHOW_ERR_FORM'
 export const CURRENT_PROJECT = 'CURRENT_PROJECT'
 export const DELETE_PROJECT = 'DELETE_PROJECT'
+
+export const TASKS_PROJECT = 'TASKS_PROJECT'
