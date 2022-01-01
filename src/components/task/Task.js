@@ -1,6 +1,21 @@
-import React from 'react'
+import React,{useContext} from 'react'
+import ProjectContext from '../../context/ProjectContext';
+import TaskContext from '../../context/task/TaskContext';
 
 const Task = ({tarea}) => {
+    
+    const projectsContext = useContext(ProjectContext);
+    const {proyecto} = projectsContext; 
+
+    const tasksContext = useContext(TaskContext)
+    const {deleteTask, getTasks} = tasksContext
+
+    const [currentProject] = proyecto
+    //Fn para eliminar x btn 
+    const taskDelete = id =>{
+        deleteTask(id)
+        getTasks(currentProject.id)
+    }
     return (
         <li className='tarea sombra'>
             <p> {tarea.nombre}</p>
@@ -27,6 +42,7 @@ const Task = ({tarea}) => {
                 <button
                     type='button'
                     className='btn incompleto'
+                    onClick={() => taskDelete(tarea.id)}
                 >Eliminar</button>
             </div>
              
